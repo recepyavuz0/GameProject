@@ -16,9 +16,9 @@ namespace GameProject
             member1.DateOfBirth = new DateTime(1996,10,2);
 
             Member member2 = new Member() {
-                Id = 2, TcNo = "19033932684",
-                FirstName = "Recep Cafer",
-                LastName = "Yavuz",
+                Id = 2, TcNo = "2222222222",
+                FirstName = "Mehmet",
+                LastName = "Can",
                 DateOfBirth = new DateTime(1999, 10, 29) 
             };
 
