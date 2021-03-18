@@ -9,16 +9,16 @@ namespace GameProject.Concreate
 {
     class EpicMemberManager:BaseMemberService
     {
-        MernisServiceAdapter _mernisServiceAdapter;
+        IMemberCheckService _memberCheckServiceAdapter;
 
-        public EpicMemberManager(MernisServiceAdapter mernisServiceAdapter)
+        public EpicMemberManager(IMemberCheckService memberCheckServiceAdapter)
         {
-            _mernisServiceAdapter = mernisServiceAdapter;
+            _memberCheckServiceAdapter = memberCheckServiceAdapter;
         }
 
         public override void Add(Member member)
         {
-            if (_mernisServiceAdapter.CheckIfRealPerson(member))
+            if (_memberCheckServiceAdapter.CheckIfRealPerson(member))
             {
                 base.Add(member);
             }
@@ -30,7 +30,7 @@ namespace GameProject.Concreate
 
         public override void Delete(Member member)
         {
-            if (_mernisServiceAdapter.CheckIfRealPerson(member))
+            if (_memberCheckServiceAdapter.CheckIfRealPerson(member))
             {
                 base.Delete(member);
             }
@@ -42,7 +42,7 @@ namespace GameProject.Concreate
 
         public override void Update(Member member)
         {
-            if (_mernisServiceAdapter.CheckIfRealPerson(member))
+            if (_memberCheckServiceAdapter.CheckIfRealPerson(member))
             {
                 base.Update(member);
             }

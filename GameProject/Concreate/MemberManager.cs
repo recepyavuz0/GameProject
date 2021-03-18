@@ -7,16 +7,16 @@ namespace GameProject.Concreate
 {
     public class MemberManager : IMemberService
     {
-        MernisServiceAdapter _mernisServiceAdapter;
+        IMemberCheckService _memberCheckServiceAdapter;
 
-        public MemberManager(MernisServiceAdapter mernisServiceAdapter)
+        public MemberManager(IMemberCheckService memberCheckServiceAdapter)
         {
-            _mernisServiceAdapter = mernisServiceAdapter;
+            _memberCheckServiceAdapter = memberCheckServiceAdapter;
         }
 
         public void Add(Member member)
         {
-            if (_mernisServiceAdapter.CheckIfRealPerson(member))
+            if (_memberCheckServiceAdapter.CheckIfRealPerson(member))
             {
                 Console.WriteLine($"{member.FirstName} oyunumuza üye oldu.");
             }
@@ -29,7 +29,7 @@ namespace GameProject.Concreate
 
         public void Delete(Member member)
         {
-            if (_mernisServiceAdapter.CheckIfRealPerson(member))
+            if (_memberCheckServiceAdapter.CheckIfRealPerson(member))
             {
                 Console.WriteLine($"{member.FirstName} oyunumuzu terk etti.");
             }
@@ -42,7 +42,7 @@ namespace GameProject.Concreate
 
         public void Update(Member member)
         {
-            if (_mernisServiceAdapter.CheckIfRealPerson(member))
+            if (_memberCheckServiceAdapter.CheckIfRealPerson(member))
             {
                 Console.WriteLine($"{member.FirstName} bilgilerini güncelledi.");
             }
